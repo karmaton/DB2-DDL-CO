@@ -1,0 +1,5 @@
+echo Update the first 10,000 Account Balances
+db2 connect to tp1
+db2 "update acct set balance = balance +1 where acct_id < 10001 "
+db2 connect reset
+

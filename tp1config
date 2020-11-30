@@ -1,0 +1,12 @@
+DB_NAME=tp1,tp1
+INSTANCE=inst464,inst464
+DB_PATH=/database,/database
+NODENUM=0
+STORAGE_PATH=/dbauto/path1,/dbauto/path1
+STORAGE_PATH=/dbauto/path2,/dbauto/path2
+CONT_PATH=/database/inst464/NODE0000/SQL00001/tp1hist,/database/inst464/NODE0000/SQL00001/tp1hist
+CONT_PATH=/database/inst464/NODE0000/SQL00001/tp1acctd,/database/inst464/NODE0000/SQL00001/tp1acctd
+CONT_PATH=/database/inst464/testhist1,/database/inst464/testhist1
+CONT_PATH=/database/inst464/testhist2,/database/inst464/testhist2
+LOG_DIR=/dblogs/inst464/tp1/,/dblogs/inst464/tp1/
+LOGARCHMETH1=DISK:/home/inst464/archive/,DISK:/home/inst464/archive/

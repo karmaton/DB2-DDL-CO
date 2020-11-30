@@ -1,0 +1,5 @@
+echo Update the Selected History Balances
+db2 connect to tp1
+db2 "update inst464.history set balance = balance +1 where acct_id = (acct_id / 10) * 10 "
+db2 connect reset
+

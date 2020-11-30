@@ -1,0 +1,6 @@
+echo Delete the file in the database path for the TP1 database
+rm -R /database/inst491/NODE0000/SQL00001/*
+echo Delete containers for SMS and DMS tablespaces
+rm /database/inst491/tp1*
+rm /database/inst491/sms1/*
+rm /database/inst491/sms2/*

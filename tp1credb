@@ -1,0 +1,4 @@
+-- Create TP1 database
+DROP DATABASE TP1;
+CREATE DATABASE TP1 ON /dbauto/path1 dbpath on /database ;
+--

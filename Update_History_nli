@@ -1,0 +1,12 @@
+select first_active_log, last_active_log 
+ from table (mon_get_transaction_log(-2)) as monlog;  
+alter table history_nli activate not logged initially;
+update history_nli set delta = delta + 1;
+update history_nli set delta = delta + 2;
+update history_nli set delta = delta + 3;
+update history_nli set delta = delta + 4;
+update history_nli set delta = delta + 5;
+select first_active_log, last_active_log 
+ from table (mon_get_transaction_log(-2)) as monlog ;
+commit;
+

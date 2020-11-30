@@ -1,0 +1,36 @@
+-- Create New Auto Storage tablespace and tables 
+
+CREATE REGULAR TABLESPACE ASMTSPD USING STOGROUP SG1
+    INITIALSIZE 20M INCREASESIZE 10 PERCENT 
+    EXTENTSIZE 8  ;
+
+
+CREATE TABLE ASM.HIST1
+ (ACCT_ID          INTEGER         NOT NULL,
+       TELLER_ID        SMALLINT        NOT NULL,
+       BRANCH_ID        SMALLINT        NOT NULL,
+       BALANCE          DECIMAL(15,2)   NOT NULL,
+       DELTA            DECIMAL(9,2)    NOT NULL,
+       PID              INTEGER         NOT NULL,
+       TSTMP            TIMESTAMP       NOT NULL WITH DEFAULT,
+       ACCTNAME         CHAR(20)        NOT NULL,
+       TEMP             CHAR(6)         NOT NULL )
+       IN ASMTSPD ;
+
+CREATE INDEX ASM.HIST1IX1 ON ASM.HIST1 (ACCT_ID) ;
+CREATE INDEX ASM.HIST1IX2 ON ASM.HIST1 (BRANCH_ID,TELLER_ID) ;
+
+
+CREATE TABLE ASM.HIST2
+ (ACCT_ID          INTEGER         NOT NULL,
+       TELLER_ID        SMALLINT        NOT NULL,
+       BRANCH_ID        SMALLINT        NOT NULL,
+       BALANCE          DECIMAL(15,2)   NOT NULL,
+       DELTA            DECIMAL(9,2)    NOT NULL,
+       PID              INTEGER         NOT NULL,
+       TSTMP            TIMESTAMP       NOT NULL WITH DEFAULT,
+       ACCTNAME         CHAR(20)        NOT NULL,
+       TEMP             CHAR(6)         NOT NULL )
+       IN ASMTSPD ;
+CREATE INDEX ASM.HIST2IX1 ON ASM.HIST2 (ACCT_ID) CLUSTER ;
+

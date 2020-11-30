@@ -1,0 +1,4 @@
+CALL SYSPROC.ADMIN_CMD ( 
+'LOAD FROM "/home/inst23/stock.del" of del 
+MODIFIED BY implicitlyhiddenmissing MESSAGES ON SERVER
+INSERT INTO MUSIC.STOCK (ITEMNO,TYPE,PRICE,QTY) ' ) ;

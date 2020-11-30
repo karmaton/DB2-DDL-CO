@@ -1,0 +1,31 @@
+SQL3501W  The table space(s) in which the table resides will not be placed in 
+backup pending state since forward recovery is disabled for the database.
+
+SQL3109N  The utility is beginning to load data from file 
+"/home/inst23/concerts.del".
+
+SQL3500W  The utility is beginning the "LOAD" phase at time "11/10/2020 
+21:13:58.450043".
+
+SQL3519W  Begin Load Consistency Point. Input record count = "0".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3110N  The utility has completed processing.  "10" rows were read from the 
+input file.
+
+SQL3519W  Begin Load Consistency Point. Input record count = "10".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3515W  The utility has finished the "LOAD" phase at time "11/10/2020 
+21:13:58.533875".
+
+
+Number of rows read         = 10
+Number of rows skipped      = 0
+Number of rows loaded       = 10
+Number of rows rejected     = 0
+Number of rows deleted      = 0
+Number of rows committed    = 10
+

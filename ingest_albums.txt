@@ -1,0 +1,15 @@
+SQL2979I  The ingest utility is starting at "07/13/2016 12:28:15.060319".
+SQL2914I  The ingest utility has started the following ingest job: 
+"ingest_alb".
+SQL2980I  The ingest utility completed successfully at timestamp "07/13/2016 
+12:28:20.741676"
+SQL2979I  The ingest utility is starting at "07/18/2016 11:57:04.454271".
+SQL2914I  The ingest utility has started the following ingest job: 
+"ingest_alb".
+SQL2980I  The ingest utility completed successfully at timestamp "07/18/2016 
+11:57:07.906031"
+SQL2979I  The ingest utility is starting at "11/10/2020 21:12:58.960910".
+SQL2914I  The ingest utility has started the following ingest job: 
+"ingest_alb".
+SQL2980I  The ingest utility completed successfully at timestamp "11/10/2020 
+21:12:59.916079"

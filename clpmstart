@@ -1,0 +1,9 @@
+echo Make database configuration changes for unit 1 demonstration 
+db2 terminate
+db2 -v update db cfg for tp1 using logfilsiz 200 logsecond 2 logprimary 3
+db2 -v update db cfg for tp1 using locklist 20 maxlocks 10
+
+db2 force application all 
+db2 terminate
+db2 -v deactivate db tp1 
+

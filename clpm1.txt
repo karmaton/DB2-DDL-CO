@@ -1,0 +1,10 @@
+
+BP_NAME                        POOL_DATA_L_READS    POOL_DATA_P_READS    DATA_HIT_PCT         POOL_INDEX_L_READS   POOL_INDEX_P_READS   INDEX_HIT_PCT       
+------------------------------ -------------------- -------------------- -------------------- -------------------- -------------------- --------------------
+IBMDEFAULTBP                                   2490                  246                   90                 3472                  332                   90
+CLPBUFFL                                     139563                 2760                   98                  184                   21                   88
+CLPBUFFS                                     166724               138432                   16                  342                  233                   31
+
+  3 record(s) selected.
+
+

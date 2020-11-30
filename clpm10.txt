@@ -1,0 +1,8 @@
+
+% Lock List % to Maxlock Number of Cons       Avg Lock Mem Per Con (bytes)
+----------- ------------ -------------------- ----------------------------
+       29.9         59.8                    3                       817024
+
+  1 record(s) selected.
+
+

@@ -1,0 +1,8 @@
+db2 connect to tp1
+db2 -tvf clpmload1.ddl
+db2 -tvf clpmload2.ddl
+db2 -tvf clpmload3.ddl
+db2 runstats on table clpm.hist1 and indexes all
+db2 runstats on table clpm.hist2 and indexes all
+db2 runstats on table clpm.teller and indexes all
+db2 terminate

@@ -1,0 +1,12 @@
+select application_handle, varchar(lock_object_type,10) as object_type, lock_mode, lock_status, count(*) as lock_count from table(MON_GET_LOCKS( NULL, -1)) AS monlocks where lock_object_type in ('TABLE','ROW') group by application_handle,lock_object_type,lock_mode,lock_status order by application_handle,lock_object_type,lock_mode,lock_status  
+
+APPLICATION_HANDLE   OBJECT_TYPE LOCK_MODE LOCK_STATUS LOCK_COUNT 
+-------------------- ----------- --------- ----------- -----------
+                7241 ROW         X         G                  8105
+                7241 TABLE       IX        G                     1
+                7243 ROW         X         G                  1435
+                7243 TABLE       IX        G                     1
+
+  4 record(s) selected.
+
+

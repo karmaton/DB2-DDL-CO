@@ -1,0 +1,7 @@
+
+Status               Authid     Appl Handle          Log Used (M) Total Activity time(msec) Total Activity Wait time UOW Start Time            
+-------------------- ---------- -------------------- ------------ ------------------------- ------------------------ --------------------------
+
+  0 record(s) selected.
+
+

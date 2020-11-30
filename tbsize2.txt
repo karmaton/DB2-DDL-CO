@@ -1,0 +1,16 @@
+
+Tablespace Name                Type       Status               Size (Meg)           % Free Space     Meg Free Space                   
+------------------------------ ---------- -------------------- -------------------- ---------------- ---------------------------------
+SYSCATSPACE                    DMS        NORMAL                                128            17.33                             22.71
+TEMPSPACE1                     SMS        NORMAL                                  0             0.00                              0.00
+USERSPACE1                     DMS        NORMAL                                 32            98.83                             32.25
+TP1HIST                        DMS        NORMAL                                 78            98.88                             78.97
+TP1ACCTD                       DMS        NORMAL                                 78            99.04                             78.85
+SYSTOOLSPACE                   DMS        NORMAL                                 32            99.66                             32.64
+USERTEMP                       SMS        NORMAL                                  0             0.00                              0.00
+CLPMTSP1                       DMS        NORMAL                                 23            41.72                              9.98
+CLPMTSP2                       DMS        NORMAL                                 62            77.88                             49.79
+
+  9 record(s) selected.
+
+

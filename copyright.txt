@@ -1,0 +1,8 @@
+All files and material for this course (Course Number CL485, title DB2 10 for Linux, Unix and Windows Quickstart for Experienced Relational DBAS are 
+IBM copyright property covered by the following copyright notice.
+
+ (c) Copyright IBM Corp. 2005, 2014
+
+US Government Users Restricted Rights - Use duplication or
+disclosure restricted by GSA ADP Schedule Contract with
+IBM Corp

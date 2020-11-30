@@ -1,0 +1,17 @@
+SQL2036N  The path for the file, named pipe, or device 
+"/home/inst481/bin/hist200k.del" is not valid.
+SQL2902I  The ingest utility completed at timestamp "04/11/2018 
+09:14:19.076639". Number of errors: "1". Number of warnings: "0".
+SQL0204N  "INST481.HISTCOPY" is an undefined name.  SQLSTATE=42704
+SQL2902I  The ingest utility completed at timestamp "04/11/2018 
+09:16:55.764980". Number of errors: "1". Number of warnings: "0".
+SQL2979I  The ingest utility is starting at "04/11/2018 09:18:38.174694".
+SQL2914I  The ingest utility has started the following ingest job: 
+"DB21101:20180411.091838.174694:00002:00021".
+SQL2980I  The ingest utility completed successfully at timestamp "04/11/2018 
+09:18:45.878637"
+SQL2979I  The ingest utility is starting at "05/03/2018 12:52:10.054147".
+SQL2914I  The ingest utility has started the following ingest job: 
+"DB21101:20180503.125210.054147:00002:00004".
+SQL2980I  The ingest utility completed successfully at timestamp "05/03/2018 
+12:52:17.826732"

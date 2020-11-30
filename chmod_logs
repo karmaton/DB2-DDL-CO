@@ -1,0 +1,2 @@
+chmod -R 770 /dblogs/inst491/tp1
+chmod -R 770 /home/inst491/archive/inst491 

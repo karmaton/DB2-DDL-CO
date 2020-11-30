@@ -1,0 +1,20 @@
+SQL2979I  The ingest utility is starting at "04/11/2018 09:23:03.025200".
+SQL2914I  The ingest utility has started the following ingest job: 
+"DB21101:20180411.092303.025200:00005:00004".
+SQL2980I  The ingest utility completed successfully at timestamp "04/11/2018 
+09:23:17.843396"
+SQL2979I  The ingest utility is starting at "04/11/2018 09:23:19.219531".
+SQL2914I  The ingest utility has started the following ingest job: 
+"DB21101:20180411.092319.219531:00003:00005".
+SQL2980I  The ingest utility completed successfully at timestamp "04/11/2018 
+09:23:20.489015"
+SQL2979I  The ingest utility is starting at "05/03/2018 12:53:37.110832".
+SQL2914I  The ingest utility has started the following ingest job: 
+"DB21101:20180503.125337.110832:00005:00004".
+SQL2980I  The ingest utility completed successfully at timestamp "05/03/2018 
+12:53:55.809866"
+SQL2979I  The ingest utility is starting at "05/03/2018 12:53:57.186614".
+SQL2914I  The ingest utility has started the following ingest job: 
+"DB21101:20180503.125357.186614:00003:00005".
+SQL2980I  The ingest utility completed successfully at timestamp "05/03/2018 
+12:53:58.465333"

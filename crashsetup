@@ -1,0 +1,21 @@
+echo Create directory for diagnotic data
+echo Ignore messages if diag directory does not exist
+rm -R $HOME/crash/*
+rmdir $HOME/crash
+mkdir $HOME/crash 
+                                                                                
+echo Update DB and DBM cfg
+db2 -v update dbm cfg using DIAGLEVEL 3 DIAGPATH $HOME/crash
+                                                                                
+db2 terminate
+db2 deactivate db tp1
+echo db2stop/db2start
+db2stop force
+db2start
+                                                                                
+echo Update DB CFG for TP1
+db2 -v update db cfg for tp1 using logprimary 6
+db2 -v update db cfg for tp1 using softmax 0 page_age_trgt_mcr 240
+
+                                                                                
+

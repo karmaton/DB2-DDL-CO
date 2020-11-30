@@ -1,0 +1,105 @@
+SQL3109N  The utility is beginning to load data from file 
+"/home/inst491/bin/acct100k.del".
+
+SQL3500W  The utility is beginning the "LOAD" phase at time "10/24/2010 
+17:23:19.651331".
+
+SQL3519W  Begin Load Consistency Point. Input record count = "0".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3110N  The utility has completed processing.  "100000" rows were read from 
+the input file.
+
+SQL3519W  Begin Load Consistency Point. Input record count = "100000".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3515W  The utility has finished the "LOAD" phase at time "10/24/2010 
+17:23:21.576742".
+
+SQL3500W  The utility is beginning the "BUILD" phase at time "10/24/2010 
+17:23:21.577546".
+
+SQL3213I  The indexing mode is "REBUILD".
+
+SQL3515W  The utility has finished the "BUILD" phase at time "10/24/2010 
+17:23:23.109199".
+
+
+Number of rows read         = 100000
+Number of rows skipped      = 0
+Number of rows loaded       = 100000
+Number of rows rejected     = 0
+Number of rows deleted      = 0
+Number of rows committed    = 100000
+
+SQL27966W  The DB2_LOAD_COPY_NO_OVERRIDE registry variable value "COPY YES TO 
+/home/inst491/loadcopy" overrides the COPY NO parameter specified in the Load.
+
+SQL3109N  The utility is beginning to load data from file 
+"/home/inst491/bin/acct100k.del".
+
+SQL3500W  The utility is beginning the "LOAD" phase at time "10/24/2010 
+17:23:42.583129".
+
+SQL3519W  Begin Load Consistency Point. Input record count = "0".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3110N  The utility has completed processing.  "100000" rows were read from 
+the input file.
+
+SQL3519W  Begin Load Consistency Point. Input record count = "100000".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3515W  The utility has finished the "LOAD" phase at time "10/24/2010 
+17:23:45.951006".
+
+SQL3500W  The utility is beginning the "BUILD" phase at time "10/24/2010 
+17:23:45.951572".
+
+SQL3213I  The indexing mode is "REBUILD".
+
+SQL3515W  The utility has finished the "BUILD" phase at time "10/24/2010 
+17:23:48.099601".
+
+
+Number of rows read         = 100000
+Number of rows skipped      = 0
+Number of rows loaded       = 100000
+Number of rows rejected     = 0
+Number of rows deleted      = 0
+Number of rows committed    = 100000
+
+SQL3304N  The table does not exist.
+
+SQL3109N  The utility is beginning to load data from file 
+"/home/inst491/bin/acct100k.del".
+
+SQL3500W  The utility is beginning the "LOAD" phase at time "10/24/2010 
+17:24:17.436459".
+
+SQL3519W  Begin Load Consistency Point. Input record count = "0".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3110N  The utility has completed processing.  "100000" rows were read from 
+the input file.
+
+SQL3519W  Begin Load Consistency Point. Input record count = "100000".
+
+SQL3520W  Load Consistency Point was successful.
+
+SQL3515W  The utility has finished the "LOAD" phase at time "10/24/2010 
+17:24:19.645921".
+
+
+Number of rows read         = 100000
+Number of rows skipped      = 0
+Number of rows loaded       = 100000
+Number of rows rejected     = 0
+Number of rows deleted      = 0
+Number of rows committed    = 100000
+

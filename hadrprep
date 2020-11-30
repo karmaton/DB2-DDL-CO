@@ -1,0 +1,2 @@
+echo Allow active log file to be read 
+chmod -R 770 /dblogs/inst491

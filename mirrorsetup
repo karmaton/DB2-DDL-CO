@@ -1,0 +1,4 @@
+echo Create Directories for Mirror Backup
+mkdir /database/mirror491
+mkdir /database/mirror491/path1
+mkdir /database/mirror491/path2

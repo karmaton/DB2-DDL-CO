@@ -1,0 +1,13 @@
+connect to tp1;
+
+create table HISTORY_NLI like HISTORY in USERSPACE1 ;
+
+LOAD FROM hist200k.del of del 
+ SAVECOUNT 500 
+MESSAGES loadnli.msg 
+REPLACE  INTO HISTORY_NLI
+copy no ;
+
+backup db tp1 tablespace(userspace1) online to /home/inst491/backups/lab7 ;
+ 
+

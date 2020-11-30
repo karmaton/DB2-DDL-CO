@@ -1,0 +1,172 @@
+
+
+--
+--
+-- LIST OF RECOMMENDED INDEXES
+-- ===========================
+-- index[1],    2.688MB
+   CREATE INDEX "INST481 "."IDX1610171817370" ON "INST481 "."HISTORY"
+   ("BRANCH_ID" ASC, "TELLER_ID" ASC, "ACCTNAME" ASC,
+   "BALANCE" ASC, "ACCT_ID" ASC) ALLOW REVERSE SCANS COLLECT SAMPLED DETAILED STATISTICS;
+   COMMIT WORK ;
+-- index[2],    0.274MB
+   CREATE INDEX "INST481 "."IDX1610171822540" ON "INST481 "."HISTORY"
+   ("TELLER_ID" ASC) ALLOW REVERSE SCANS COLLECT SAMPLED DETAILED STATISTICS;
+   COMMIT WORK ;
+
+
+--
+--
+-- RECOMMENDED EXISTING INDEXES
+-- ============================
+-- RUNSTATS ON TABLE "INST481 "."HISTORY" FOR SAMPLED DETAILED INDEX "INST481 "."HISTIX1" ;
+-- COMMIT WORK ;
+
+
+--
+--
+-- UNUSED EXISTING INDEXES
+-- ============================
+-- ===========================
+--
+
+-- ====ADVISOR DETAILED XML OUTPUT=============
+-- ==(Benefits do not include clustering recommendations)==
+--
+
+--<?xml version="1.0"?>
+--<design-advisor>
+--<index>
+--<identifier>
+--<name>IDX1610171817370</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<table><identifier>
+--<name>HISTORY</name>
+--<schema>INST481 </schema>
+--</identifier></table>
+--<statementlist>0,2</statementlist>
+--<benefit>630.000000</benefit>
+--<overhead>0.000000</overhead>
+--<diskspace>2.688500</diskspace>
+--</index>
+--<index>
+--<identifier>
+--<name>IDX1610171822540</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<table><identifier>
+--<name>HISTORY</name>
+--<schema>INST481 </schema>
+--</identifier></table>
+--<statementlist>3,4</statementlist>
+--<benefit>779.000000</benefit>
+--<overhead>0.000000</overhead>
+--<diskspace>0.274438</diskspace>
+--</index>
+--<statement>
+--<statementnum>0</statementnum>
+--<statementtext>
+-- SELECT  BRANCH_ID,  TELLER_ID,  ACCT_ID,  BALANCE, 
+--  ACCTNAME     FROM HISTORY WHERE  BRANCH_ID = 50  
+--  ORDER BY  TELLER_ID ASC 
+--</statementtext>
+--<objects>
+--<identifier>
+--<name>HISTORY</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<identifier>
+--<name>IDX1610171817370</name>
+--<schema>INST481 </schema>
+--</identifier>
+--</objects>
+--<benefit>298.000000</benefit>
+--<frequency>1</frequency>
+--</statement>
+--<statement>
+--<statementnum>1</statementnum>
+--<statementtext>
+-- SELECT  *  FROM HISTORY WHERE  BRANCH_ID = 50   ORDER 
+-- BY  TELLER_ID ASC 
+--</statementtext>
+--<objects>
+--<identifier>
+--<name>HISTIX1</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<identifier>
+--<name>HISTORY</name>
+--<schema>INST481 </schema>
+--</identifier>
+--</objects>
+--<benefit>0.000000</benefit>
+--<frequency>1</frequency>
+--</statement>
+--<statement>
+--<statementnum>2</statementnum>
+--<statementtext>
+-- SELECT  *  FROM HISTORY WHERE  BRANCH_ID = 10 and 
+-- teller_id = 200 
+--</statementtext>
+--<objects>
+--<identifier>
+--<name>HISTORY</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<identifier>
+--<name>IDX1610171817370</name>
+--<schema>INST481 </schema>
+--</identifier>
+--</objects>
+--<benefit>332.000000</benefit>
+--<frequency>1</frequency>
+--</statement>
+--<statement>
+--<statementnum>3</statementnum>
+--<statementtext>
+-- SELECT  BRANCH_ID,  TELLER_ID,  ACCT_ID,  BALANCE, 
+--  ACCTNAME     FROM HISTORY WHERE  TELLER_ID BETWEEN 
+-- 100 AND 300   ORDER BY  TELLER_ID ASC 
+--</statementtext>
+--<objects>
+--<identifier>
+--<name>HISTORY</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<identifier>
+--<name>IDX1610171822540</name>
+--<schema>INST481 </schema>
+--</identifier>
+--</objects>
+--<benefit>501.000000</benefit>
+--<frequency>1</frequency>
+--</statement>
+--<statement>
+--<statementnum>4</statementnum>
+--<statementtext>
+-- SELECT  BRANCH_ID,  TELLER_ID,  ACCT_ID,  BALANCE, 
+--  ACCTNAME FROM HISTORY WHERE  BRANCH_ID < 20 AND TELLER_ID 
+-- BETWEEN 700 AND 800  
+--</statementtext>
+--<objects>
+--<identifier>
+--<name>IDX1610171822540</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<identifier>
+--<name>HISTORY</name>
+--<schema>INST481 </schema>
+--</identifier>
+--<identifier>
+--<name>HISTIX1</name>
+--<schema>INST481 </schema>
+--</identifier>
+--</objects>
+--<benefit>278.000000</benefit>
+--<frequency>1</frequency>
+--</statement>
+--</design-advisor>
+
+-- ====ADVISOR DETAILED XML OUTPUT=============
+--

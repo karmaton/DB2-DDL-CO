@@ -1,0 +1,3 @@
+cp -vR /database/inst491/* /database/mirror491
+cp -vR /dbauto/path1/inst491/* /database/mirror491/path1
+cp -vR /dbauto/path2/inst491/* /database/mirror491/path2

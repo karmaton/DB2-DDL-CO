@@ -1,0 +1,5 @@
+echo Create log paths for TP1 database
+mkdir /dblogs/inst491
+mkdir /dblogs/inst491/tp1
+mkdir /dblogs/inst491/tp1/NODE0000
+mkdir $HOME/archive

@@ -1,0 +1,15 @@
+-- drop current history table index on acct_id
+drop index histindx ;
+-- create new history table index on branch_id
+CREATE INDEX HISTIX1 ON HISTORY (BRANCH_ID ASC)
+ ALLOW REVERSE SCANS ;
+-- load 200K rows into history
+load from hist200k.ixf of ixf messages ldhist.msg replace into history  nonrecoverable ;
+-- collect new statistics
+runstats on table inst481.history and indexes all ;
+-- set tablespace overhead and transfer rates for explain costs
+alter tablespace tp1acctd overhead 12.67 transferrate .18 ;
+alter tablespace tp1accti overhead 12.67 transferrate .18 ;
+alter tablespace tp1hist  overhead 12.67 transferrate .18 ;
+alter tablespace tp1sms overhead 12.67 transferrate .18 ;
+

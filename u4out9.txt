@@ -1,0 +1,42 @@
+truncate table history drop storage immediate
+DB20000I  The SQL command completed successfully.
+
+ingest set commit_count 5000 
+DB20000I  The INGEST SET command completed successfully.
+
+ingest from file sampledata.del  format delimited ( $ackey integer external , $telkey integer external , $brkey integer external, $balance decimal(15,2) external ) messages ingestsamp.txt restart off update inst464.acct set (balance) = ($balance) where acct_id = $ackey 
+
+Number of rows read         = 10139
+Number of rows inserted     = 0
+Number of rows rejected     = 0
+
+SQL2980I  The ingest utility completed successfully at timestamp "04/17/2018 
+09:07:27.222554"
+
+ingest from file sampledata.del  format delimited ( $ackey integer external , $telkey integer external , $brkey integer external, $balance decimal(15,2) external ) messages ingestsamp.txt restart off update inst464.branch set (balance) = (balance + $balance) where branch_id = $brkey 
+
+Number of rows read         = 10139
+Number of rows inserted     = 0
+Number of rows rejected     = 0
+
+SQL2980I  The ingest utility completed successfully at timestamp "04/17/2018 
+09:07:28.675187"
+
+ingest from file sampledata.del  format delimited ( $ackey integer external , $telkey integer external , $brkey integer external, $balance decimal(15,2) external ) messages ingestsamp.txt restart off update inst464.teller set (balance) = (balance + $balance) where teller_id = $telkey 
+
+Number of rows read         = 10139
+Number of rows inserted     = 0
+Number of rows rejected     = 0
+
+SQL2980I  The ingest utility completed successfully at timestamp "04/17/2018 
+09:07:30.058598"
+
+ingest from file hist200k.del  format delimited messages ingestsamp.txt restart off insert into inst464.history
+
+Number of rows read         = 200000
+Number of rows inserted     = 200000
+Number of rows rejected     = 0
+
+SQL2980I  The ingest utility completed successfully at timestamp "04/17/2018 
+09:07:36.066941"
+

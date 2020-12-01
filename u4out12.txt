@@ -1,0 +1,21 @@
+select varchar(memory_pool_type,25) as memory_pool, memory_pool_id, memory_pool_used , memory_pool_used_hwm from table (mon_get_memory_pool('DATABASE','TP1',-1)) as m1 order by memory_pool_id 
+
+MEMORY_POOL               MEMORY_POOL_ID       MEMORY_POOL_USED     MEMORY_POOL_USED_HWM
+------------------------- -------------------- -------------------- --------------------
+DATABASE                                     2               141888               141888
+LOCK_MGR                                     4                21120                21120
+UTILITY                                      5                   64                  576
+PACKAGE_CACHE                                7                 3712                 3712
+CAT_CACHE                                    8                  640                  640
+BP                                          16               163328               163328
+BP                                          16               214080               214080
+BP                                          16                 1792                 1792
+BP                                          16                 1536                 1536
+BP                                          16                 1408                 1408
+BP                                          16                 1344                 1344
+SHARED_SORT                                 18                 2304                12864
+XMLCACHE                                    93                  192                  192
+
+  13 record(s) selected.
+
+

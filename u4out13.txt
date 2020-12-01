@@ -1,0 +1,30 @@
+Tracking Memory on: 2018/04/17 at 09:17:55
+
+Memory for database: TP1     
+
+   Backup/Restore/Util Heap is of size 65536 bytes
+   Package Cache is of size 3801088 bytes
+   Other Memory is of size 196608 bytes
+   Catalog Cache Heap is of size 655360 bytes
+   Buffer Pool Heap (2) is of size 167247872 bytes
+   Buffer Pool Heap (1) is of size 219217920 bytes
+   Buffer Pool Heap (System 32k buffer pool) is of size 1835008 bytes
+   Buffer Pool Heap (System 16k buffer pool) is of size 1572864 bytes
+   Buffer Pool Heap (System 8k buffer pool) is of size 1441792 bytes
+   Buffer Pool Heap (System 4k buffer pool) is of size 1376256 bytes
+   Shared Sort Heap is of size 2359296 bytes
+   Lock Manager Heap is of size 21626880 bytes
+   Database Heap is of size 145293312 bytes
+   Application Heap (109) is of size 131072 bytes
+   Application Heap (108) is of size 65536 bytes
+   Application Heap (106) is of size 65536 bytes
+   Application Heap (105) is of size 65536 bytes
+   Application Heap (104) is of size 65536 bytes
+   Application Heap (103) is of size 65536 bytes
+   Application Heap (102) is of size 196608 bytes
+   Application Heap (101) is of size 65536 bytes
+   Application Heap (100) is of size 65536 bytes
+   Application Heap (99) is of size 65536 bytes
+   Applications Shared Heap is of size 917504 bytes
+   Total: 568459264 bytes
+

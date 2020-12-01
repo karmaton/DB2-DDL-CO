@@ -1,0 +1,19 @@
+load from hist200k.del of del messages rowload1.msg replace into MEM.COLHIST nonrecoverable 
+
+Number of rows read         = 200000
+Number of rows skipped      = 0
+Number of rows loaded       = 200000
+Number of rows rejected     = 0
+Number of rows deleted      = 0
+Number of rows committed    = 200000
+
+
+select varchar(memory_pool_type,25) as memory_pool, memory_pool_id, memory_pool_used , memory_pool_used_hwm from table (mon_get_memory_pool('DATABASE','TP1',-1)) as m1 where memory_pool_type='UTILITY'  
+
+MEMORY_POOL               MEMORY_POOL_ID       MEMORY_POOL_USED     MEMORY_POOL_USED_HWM
+------------------------- -------------------- -------------------- --------------------
+UTILITY                                      5                  384                42048
+
+  1 record(s) selected.
+
+

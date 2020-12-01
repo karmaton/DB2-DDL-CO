@@ -1,0 +1,1385 @@
+* Timestamp: Tue Apr 17 2018 09:09:28 EDT
+
+---------------------------------------------
+--#SET ROWS_OUT 5
+
+
+---------------------------------------------
+--#SET PERF_DETAIL 0
+
+* Start of Block Number 1:
+* Block Iteration 1 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 2 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 3 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 4 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 5 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 6 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 7 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 8 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 9 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* Block Iteration 10 of 10:
+
+---------------------------------------------
+* Comment: " JOIN TELLER,HISTORY   for BRANCH Range"
+
+
+---------------------------------------------
+* Comment: " QUERY 1"
+
+---------------------------------------------
+
+* SQL Statement Number 1:
+
+SELECT HISTORY.BRANCH_ID, TELLER.TELLER_NAME, HISTORY.ACCTNAME,
+ HISTORY.ACCT_ID, HISTORY.BALANCE
+ FROM HISTORY AS HISTORY, TELLER AS TELLER
+ WHERE HISTORY.TELLER_ID = TELLER.TELLER_ID
+ AND HISTORY.BRANCH_ID BETWEEN 20 AND 29
+ ORDER BY HISTORY.BRANCH_ID ASC, HISTORY.ACCT_ID ASC ;
+
+BRANCH_ID TELLER_NAME          ACCTNAME             ACCT_ID     BALANCE          
+--------- -------------------- -------------------- ----------- -----------------
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->         348          16200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        1553          10100.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        4104          19200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6017          18200.00
+       20 <--20 BYTE STRING--> <--20 BYTE STRING-->        6650          21100.00
+
+* 21545 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 2"
+
+
+---------------------------------------------
+* Comment: " List HISTORY from Teller Range"
+
+---------------------------------------------
+
+* SQL Statement Number 2:
+
+SELECT ACCT_ID, ACCTNAME, TELLER_ID, BRANCH_ID, BALANCE
+   FROM HISTORY
+   WHERE TELLER_ID BETWEEN 100 AND 199;
+
+ACCT_ID     ACCTNAME             TELLER_ID BRANCH_ID BALANCE          
+----------- -------------------- --------- --------- -----------------
+     481747 <--20 BYTE STRING-->       179        10          11500.00
+     964363 <--20 BYTE STRING-->       198        41          11600.00
+     601603 <--20 BYTE STRING-->       107        52          12200.00
+      73089 <--20 BYTE STRING-->       193        78          12200.00
+     825017 <--20 BYTE STRING-->       140        20          12800.00
+
+* 20151 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 3"
+
+
+---------------------------------------------
+* Comment: " ACCT Summary Report by ACCT_GRP"
+
+---------------------------------------------
+
+* SQL Statement Number 3:
+
+SELECT ACCT_GRP , SUM(BALANCE) FROM ACCT
+WHERE ACCT_GRP BETWEEN 100 AND 150
+GROUP BY ACCT_GRP;
+
+ACCT_GRP 2                                
+-------- ---------------------------------
+     100                       10098400.00
+     101                        9886000.00
+     102                        9826500.00
+     103                       10281700.00
+     104                       10272300.00
+
+* 51 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 4"
+
+
+---------------------------------------------
+* Comment: " Join ACCT,TELLER,HISTORY"
+
+---------------------------------------------
+
+* SQL Statement Number 4:
+
+SELECT ACCT.ACCT_ID, ACCT.NAME, TELLER.TELLER_ID, TELLER.TELLER_NAME,
+  HISTORY.BRANCH_ID, HISTORY.BALANCE, HISTORY.PID
+   FROM ACCT AS ACCT, TELLER AS TELLER, HISTORY AS HISTORY
+   WHERE ACCT.ACCT_ID = HISTORY.ACCT_ID
+   AND ACCT.ACCT_GRP BETWEEN 400 AND 500
+   AND HISTORY.TELLER_ID = TELLER.TELLER_ID
+   ORDER BY HISTORY.PID ASC ;
+
+ACCT_ID     NAME                 TELLER_ID TELLER_NAME          BRANCH_ID BALANCE           PID        
+----------- -------------------- --------- -------------------- --------- ----------------- -----------
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          17700.00           0
+        239 <--20 BYTE STRING-->       458 <--20 BYTE STRING-->        41          25800.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          20100.00           0
+        473 <--20 BYTE STRING-->       754 <--20 BYTE STRING-->        73          27400.00           0
+        477 <--20 BYTE STRING-->       373 <--20 BYTE STRING-->        65          28700.00           0
+
+* 20392 row(s) fetched, 5 row(s) output.
+
+
+---------------------------------------------
+* Comment: " QUERY 5"
+
+
+---------------------------------------------
+* Comment: " Partial NAME,ADDRESS List from ACCT"
+
+---------------------------------------------
+
+* SQL Statement Number 5:
+
+SELECT NAME , ADDRESS FROM ACCT WHERE ACCT_GRP < 50 ORDER BY NAME ;
+
+NAME                 ADDRESS                       
+-------------------- ------------------------------
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+<--20 BYTE STRING--> <------ 30 BYTE STRING ------>
+
+* 50335 row(s) fetched, 5 row(s) output.
+
+* End of Block Number 1
+* Summary Table:
+
+Type      Number      Repetitions Total Time (s) Min Time (s)   Max Time (s)   Arithmetic Mean Geometric Mean Row(s) Fetched Row(s) Output
+--------- ----------- ----------- -------------- -------------- -------------- --------------- -------------- -------------- -------------
+Block               1          10      21.113119       2.009236       2.648720        2.111312       2.104445        1124740           250
+
+* Total Entries:              1
+* Total Time:                21.113119 seconds
+* Minimum Time:              21.113119 seconds
+* Maximum Time:              21.113119 seconds
+* Arithmetic Mean Time:      21.113119 seconds
+* Geometric Mean Time:       21.113119 seconds
+---------------------------------------------
+* Timestamp: Tue Apr 17 2018 09:09:49 EDT

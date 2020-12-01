@@ -1,0 +1,18 @@
+
+inst464
+
+db2 terminate
+db2 deactivate db tp1
+db2stop
+
+db2set DB2_WORKLOAD=ANALYTICS
+
+db2set
+
+db2 autoconfigure apply db and dbm
+
+db2 connect to tp1
+
+db2 get db cfg|grep -i defa
+
+

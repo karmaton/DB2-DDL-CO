@@ -1,0 +1,22 @@
+Preparacion CL207
+
+sudo adduser --group adm01	
+sudo adduser --ingroup adm01 inst00
+sudo adduser user23	
+sudo adduser ctrl23
+sudo adduser dba23
+
+sudo /opt/ibm/db2/V11.1/instance/db2icrt -u inst00 inst00
+
+con inst00 
+db2start
+db2sampl -sql
+db2 CREATE DATABASE DSMDATA
+
+salir de inst00
+
+sudo mkdir /dbauto
+sudo mkdir /dbauto/path1
+sudo mkdir /dbauto/path2
+sudo mkdir /database
+sudo chown -R inst00:adm01 /dbauto	

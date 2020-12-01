@@ -1,0 +1,6 @@
+http://ubuntupython:11080/console/dswebcustomauth/pages/login.jsp
+
+sudo apt-get install ssh
+sudo apt install xrdp
+sudo ufw allow 3389/tcp
+sudo gsettings set org.gnome.Vino require-encryption false

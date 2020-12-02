@@ -1,7 +1,7 @@
 select 
 varchar(tabname,50) as table,
 varchar(tabschema,12) as schema,
-rows_read,
+rows_read, rows_updated, rows_inserted, rows_deleted,
 table_scans,
 object_data_l_reads as data_l_reads, 
 object_col_l_reads as column_l_reads

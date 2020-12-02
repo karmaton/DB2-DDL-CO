@@ -1,0 +1,7 @@
+ select   
+ SUBSTR(TABSCHEMA,1,10) AS SCHEMA , SUBSTR(TABNAME,1,12) AS TABLE , 
+ DATA_OBJECT_P_SIZE, INDEX_OBJECT_P_SIZE ,  
+ COL_OBJECT_P_SIZE, COL_OBJECT_L_SIZE 
+ from table ( admin_get_tab_info (NULL,NULL  ) ) AS TABINFO
+where tabschema in ('COLORG','ROWORG')  
+order by TABNAME  ; 

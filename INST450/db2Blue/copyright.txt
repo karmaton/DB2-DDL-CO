@@ -1,0 +1,8 @@
+All files and material for this course (Course Number CL463, title DB2 10.5 for LUW Advanced Database Administration with DB2 BLU Acceleration) are 
+IBM copyright property covered by the following copyright notice.
+
+ (c) Copyright IBM Corp. 2005, 2013
+
+US Government Users Restricted Rights - Use duplication or
+disclosure restricted by GSA ADP Schedule Contract with
+IBM Corp

@@ -1,3 +1,3 @@
 # DB2-DDL&CO
 
-Archivos curso
+Archivos recurrentes IBM DB2 Data Base
